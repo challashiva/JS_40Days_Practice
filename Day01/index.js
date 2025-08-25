@@ -1,0 +1,1 @@
+document.getElementById("showtext").innerText="Welcome to Javascript";

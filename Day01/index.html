@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script async src="./index.js"></script>
+    <!--<script src="./index.js"></script>
+        The browser stops parsing HTML when it sees this script.
+        Downloads script.js → executes it → then continues parsing HTML.
+        blocks rendering, so it may slow page load. 
+        Getting error Uncaught TypeError: Cannot set properties of null (setting 'innerText')
+     <script src="script.js" async></script>
+        Script is downloaded in parallel with HTML parsing.
+        As soon as the script is ready, it executes immediately, pausing HTML parsing.
+        Execution order is not guaranteed if multiple async scripts are used.
+        Best for independent scripts (e.g., analytics, ads, trackers).
+    <script src="script.js" defer></script>
+        Script is downloaded in parallel with HTML parsing.
+        Execution is deferred until after HTML is fully parsed.
+        Scripts with defer run in order, top to bottom.
+        Best for scripts that depend on the DOM structure.
+     -->   
+
+</head>
+<body>
+    <h1>40 Days JS</h1>
+    <div id="showtext"></div> 
+</body>
+</html>
