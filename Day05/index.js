@@ -150,10 +150,12 @@ Output: 9876
 ``` */  
 
 let numToReverse= 6789;
-let revDigit=0;
-console.log(numToReverse.length)
+let revDigit="";
+console.log(numToReverse);
 while(numToReverse > 0){
     let lastDigit=numToReverse % 10;
-    console.log(lastDigit)
+    revDigit = revDigit + lastDigit;
+    
     numToReverse = Math.floor(numToReverse / 10);
 }
+console.log(revDigit);
