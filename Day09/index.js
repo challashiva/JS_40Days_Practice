@@ -86,7 +86,7 @@ function foo(){
  /* 
     For above one it will through an error ReferenceError: Cannot access 'foo1' before initialization
     in creation phse it is initiaalized as a variable for let it will through an refference error
-     if you are hoisting/execute that variable berefor assignung any value
+     if you are hoisting/execute that variable before assignung any value
 
     GEC( Global execution context):
             CP:foo1 -- Allocating memory with undefined as it is considered as an variable
