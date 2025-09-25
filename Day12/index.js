@@ -87,7 +87,7 @@ let profile = {
 
 //object.keys()
 
-console.log(Object.keys(profile));
+console.log("Keyss ", Object.keys(profile));
 
 //in operator
 console.log("state" in profile);//false
@@ -164,6 +164,33 @@ copy.nested.b = 99;
 console.log(obj.nested.b);  // 2 ✅ (unchanged)
 console.log(copy.nested.b); // 99
 
+const user3 ={
+  name:"Siva",
+  address:{city:"bangalore"}
+}
+
+const frezeUser = Object.freeze(user3);
+user3.age=30;
+user3.address.pin=515123;
+console.log(frezeUser);
+console.log(Object.isFrozen(user3)); //true
+
+const dept ={
+  name:'finance'
+}
+
+Object.seal(dept);
+delete dept.name; // it won't delete
+
+dept.name="HR"; // it will change the name to HR
+console.log(dept);
+
+console.log(Object.hasOwn(dept,"name"));
+console.log(Object.hasOwn(dept,"address"));
+
+console.log("Learn Object destructuring");
+
+
 
 // Declare the global variable
 let count = 0;
@@ -207,3 +234,144 @@ console.log(cc("K"));
 
 
 
+//Tasks
+// ## 1. What will be the output and why?
+
+const user4 = { name: "Alex", age: undefined };
+console.log(user4.age ?? "Not provided");
+//Output will be not provided, ??(Nullish Coalescing) this operator checks 
+// if value is null or undefined then return default value
+
+// ## 2. What will happen if we try to modify a frozen object?
+
+const obj4 = Object.freeze({ a: 1 });
+obj4.a = 2;
+console.log(obj4.a);
+//Output will be 1, we cannot change value while objeect is freezess
+
+
+// ## 3. Given an object with deeply nested properties,
+//  extract name, company, and address.city using destructuring
+
+const person = {
+  name: "Tapas",
+  company: {
+    name: "tapaScript",
+    location: {
+      city: "Bangalore",
+      zip: "94107"
+    }
+  }
+};
+
+const {name:pName,company:{name:cName,location:{city:Pcity}}} = person;
+console.log(pName,cName,Pcity);
+
+/* ## 5. Book Store Inventory System
+
+- Store books in an object.
+- Add functionality to check availability and restock books. */
+
+
+const bookStore ={
+  storeName:"Study Books",
+  books:[ {
+      title:"JS Book"
+    },{
+      title:"CSS Book"
+    },{
+      title:"HTML Book"
+    }],
+  availability:function(name){
+    if(name in this.books) {
+      console.log(`${name} is not available`);
+    } else {
+      console.log(`${name} is available`);
+    }
+  },
+  restock:function(name) {
+    this.books.push({title:name});  
+    console.log(this.books);  
+  }
+}
+
+console.log(bookStore);
+bookStore.availability("JS1 Book");
+bookStore.restock("React");
+
+//## 6. What is the difference between Object.keys() and Object.entries()? 
+// Explain with examples
+
+//Objet keys will return key values in arrays -- Returns an array of the object’s own property names (keys).
+//Object entries will return array every object in[key,value] pair -- Returns an array of key-value pairs, where each pair is an array [key, value].
+
+console.log(Object.keys(bookStore));
+console.log(Object.entries(bookStore));
+
+//## 7. How do you check if an object has a certain property?
+//Using Object.hasOwn(obj,property) we can check
+console.log(Object.hasOwn(bookStore,"books"));
+
+// ## 8. What will be the output and why?
+
+const person3 = { name: "John" };
+const newPerson = person3;
+newPerson.name = "Doe";
+console.log(person3.name);
+/* Objects are stored by reference in JavaScript.
+
+Assigning one object to another variable does not create a copy; both variables point to the same object. */
+
+/* ## 9. What’s the best way to deeply copy a nested object? Expalin with examples */
+//For deepclone nested object we need to use structured() method
+
+const cloneObj={
+  a:1,
+  b:{c:2}
+} 
+
+const assignClone= Object.assign({},cloneObj);
+assignClone.a=10;
+assignClone.b.c=20;
+console.log(assignClone.a); //10
+console.log(cloneObj.a); //1
+console.log(cloneObj.b.c); //20
+console.log(assignClone.b.c); //20
+//Using assgn nested objects not deeply cloned or copied so we are using structured()method
+
+
+console.log("StructuredClone()")
+const assignClone1= structuredClone(cloneObj)
+assignClone1.a=30;
+assignClone1.b.c=300;
+console.log(assignClone1.a); //30
+console.log(cloneObj.a); //1
+console.log(cloneObj.b.c); //20
+console.log(assignClone1.b.c); //300
+
+
+// ## 10. Loop and print values using Object destructuiring
+
+const users = [
+  {
+      'name': 'Alex',
+      'address': '15th Park Avenue',
+      'age': 43
+  },
+  {
+      'name': 'Bob',
+      'address': 'Canada',
+      'age': 53
+  },
+  {
+      'name': 'Carl',
+      'address': 'Bangalore',
+      'age': 26
+  }
+];
+
+for(const {name,address,age} of users) {
+  console.log(name, address,age);
+}
+
+console.log((users));
