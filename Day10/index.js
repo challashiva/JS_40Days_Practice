@@ -47,7 +47,9 @@ function situation() {
 situation();
 console.log(message);
 
-//Tasks
+ -----------------------------------------------------
+ //Tasks
+ -----------------------------------------------------
 
 // ## 1. What will be the output of the following code and why?
 let user = "Alice";

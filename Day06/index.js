@@ -122,7 +122,9 @@ function recussiveFunc(n) {
 
 recussiveFunc(3);
 
-//Tasks
+ -----------------------------------------------------
+ //Tasks
+ -----------------------------------------------------
 
 /* ## 1. Write a Function to Convert Celsius to Fahrenheit
 Create a function celsiusToFahrenheit(celsius) that converts a temperature from Celsius to Fahrenheit.

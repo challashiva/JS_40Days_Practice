@@ -123,7 +123,9 @@ try {
     console.error(`${error.name}: ${error.message}`)
  }
 
+ -----------------------------------------------------
  //Tasks
+ -----------------------------------------------------
 
  /* ## 1. What will be the output of the following code?
 

@@ -130,7 +130,10 @@ let a7 = [1,2,3,4,5];
 console.log(typeof a7);
 console.log(typeof null);
 
-//Tasks
+ -----------------------------------------------------
+ //Tasks
+ -----------------------------------------------------
+ 
 //#1
 let evenOrOddNum=1101;
 console.log((evenOrOddNum % 2 == 0) ? 'even number':'Odd Number');

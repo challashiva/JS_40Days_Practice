@@ -80,7 +80,9 @@ do{
     num++;
 } while(num <= 5);
 
-// Tasks
+ -----------------------------------------------------
+ //Tasks
+ -----------------------------------------------------
 
 /* ## 1. Generate a Pyramid Pattern using Nested Loop as it is shown below:
 

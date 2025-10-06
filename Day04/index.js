@@ -105,7 +105,10 @@ switch(name1) {
 }
 
 
-//Tasks
+ -----------------------------------------------------
+ //Tasks
+ -----------------------------------------------------
+ 
 //#01 1. What will be the output of this code snippet and why?
  let day1 = "Monday";
 

@@ -234,7 +234,9 @@ console.log(cc("K"));
 
 
 
-//Tasks
+ -----------------------------------------------------
+ //Tasks
+ -----------------------------------------------------
 // ## 1. What will be the output and why?
 
 const user4 = { name: "Alex", age: undefined };

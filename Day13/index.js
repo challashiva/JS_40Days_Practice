@@ -118,7 +118,10 @@ const newHbsFun= newHobbies.bind(officer);
 newHbsFun("hunting","hockey");
 
 
-//Tasks
+ -----------------------------------------------------
+ //Tasks
+ -----------------------------------------------------
+ 
 console.log("**** Examples ****");
 
 const user5 = {

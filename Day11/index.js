@@ -74,7 +74,10 @@ sivasAccont.withdraw(900);
 sivasAccont.checkBaance();
 // sivasAccont = null;
 
-//Tasks
+ -----------------------------------------------------
+ //Tasks
+ -----------------------------------------------------
+ 
 // ## 1. What will be the output of the following code and why?
 
 function outer() {
