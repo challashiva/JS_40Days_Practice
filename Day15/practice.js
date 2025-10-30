@@ -35,3 +35,21 @@ console.log("HTML Collection as Array like");
 
 console.log(document.getElementsByTagName('li'));
 console.log("convert HTML COllection into array",Array.from(document.getElementsByTagName('li')));
+
+
+const collectionArr = Array.from(document.getElementsByTagName('li'));
+console.log(collectionArr);
+
+const collectionPromise = Array.fromAsync(document.getElementsByTagName('li'));
+console.log(collectionPromise);
+collectionPromise.then((value) => console.log(value));
+
+const ret = Array.fromAsync({
+    0:Promise.reject('javcript'),
+    1:'google',
+    2:Promise.resolve('Apple'),
+    length:3
+}).then((value) => console.log(value))
+    .catch(err => console.error("rejected ", err.message));
+
+console.log(ret);
