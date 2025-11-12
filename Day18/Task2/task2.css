@@ -1,0 +1,8 @@
+#myTable {
+    border: 1px solid #999;
+    border-radius: 4px;
+    width: 50%;
+}
+#myTable th {
+    border-right: 1px solid #999;
+}
