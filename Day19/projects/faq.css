@@ -1,0 +1,18 @@
+.faq-item {
+    margin: 15px;
+    box-shadow: 1px 1px 2px 2px #dbdbdb;
+    padding: 8px;
+    width: fit-content;
+}
+
+.question {
+    color: #333;
+    font-weight: bold;
+    font-size: 20px;
+}
+.answer {
+    display: none;
+}
+.answer.show{
+    display: block;
+}
