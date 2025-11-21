@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="task.js"></script>
+    <style>
+        .menuItem.active {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Day 20 Tasks</h1>
+    <hr>
+    <ul class="navMenu">
+        <li class="menuItem">Home</li>
+        <li class="menuItem">About</li>
+        <li class="menuItem">Contact</li>
+        <li class="menuItem">Address</li>
+    </ul>
+    <hr>
+    <p id="para">Welcome to the <strong>20th Day tasks</strong> in javascript </p>
+
+    <hr>
+    <ul id="list"></ul>
+    <hr>
+    <h1>Smart cloner</h1>
+
+    <button id="cloneTrueBtn">Clone True</button>
+    <button id="cloneFalseBtn">Clone False</button>
+
+    <template id="clonerTemplate">
+        <div class="cloneItems">
+            <h1 class="title"></h1>
+            <p class="cloneText"></p>
+        </div>
+    </template>
+    <div id="cloneOutput">
+
+    </div>
+
+    <h1>Mutation Observer</h1>
+
+    <div editable id="mutationDiv"></div>
+    <button onclick="mutateDOM()">Mutate DOM</button>
+</body>
+</html>
