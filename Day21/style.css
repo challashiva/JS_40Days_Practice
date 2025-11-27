@@ -1,0 +1,77 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #1e1e2f;
+    color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0px;
+}
+
+.quiz-box {
+    background-color: #2a2a40;
+    padding: 3px;
+    border-radius: 16px;
+    width: 50%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+#question {
+    margin-bottom: 20px;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#next-btn {
+    padding: 10px 20px;
+    border: none;
+    background: #4b6cb7;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#timer {
+    font-size: 20px;
+    color: yellow;
+}
+
+.option-btn,
+.restart-btn {
+    padding: 12px;;
+    margin: 0px 10px;
+    background: #38385e;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.option-btn:hover {
+    background-color: #4b4b7e;
+}
+.option-btn.correct {
+    background-color: #3cc73c;
+}
+.option-btn.wrong {
+    background-color: #e74d4d;
+}
+
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <ul>
+        <li>The</li>
+        <li>Test</li>
+    </ul>
+    <ul>
+        <li>has</li>
+        <li>passed</li>
+    </ul>
+
+    <h1>Contents</h1>
+
+<div class="contents">
+  <ul class="book">
+    <li class="chapter">Chapter 1</li>
+    <li class="chapter">Chapter 2</li>
+  </ul>
+</div>
+
+
+    <script defer>
+        let elements= document.querySelectorAll('ul');
+        for(let elem of elements) {
+            console.log(elem.lastElementChild.innerText);
+        }
+
+        let chapter=document.querySelector(".chapter");
+        console.log(chapter.innerText);
+        console.log(chapter.closest(".contents"));
+        console.log(chapter.closest(".book"));
+    </script>
+</body>
+</html>
