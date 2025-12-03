@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #1e1e2f;
+    color: #f0f0f0;
+    height: 100vh;
+    margin: 20px;
+}
+
+.foodConainer {
+    box-shadow: 0px 0px 5px 0px #8d6363;
+    background: #352d2d;
+    padding: 2px 10px;
+    margin: 15px 0px;
+    cursor: pointer;
+}
+.foodConainer p {
+    opacity: 1;
+}
+/* .hidden{
+    display: none;
+} */
+#clear {
+    background-color: #36b8f3;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+.details.open{
+    max-height: 500px;
+    display: block;
+}
