@@ -116,3 +116,125 @@ function baseValue(value){
 const multiple = baseValue(2);
 answer = multiple(5);
 console.log(answer); */
+
+/**
+ * @param {string} val
+ * @return {Object}
+ */
+var expect = function(val) {
+    return{
+        toBe:(value) => {
+            if(val === value){
+                return true
+            } else {
+                throw new Error("Not Equal")
+            }
+        },
+        notToBe:(value) => {
+            if(val !== value){
+                return true
+            } else {
+                throw new Error("Not Equal")
+            }
+        }
+    }
+};
+
+console.log(expect(5).toBe(5)); // true
+//  expect(5).notToBe(5); // throws "Equal"
+
+
+var createCounter = function(init) {
+    let counter = init;
+    return {
+        increment:()=>{
+            counter += 1;
+            return  counter;
+        },
+        decrement: ()=>{
+            counter -= 1;
+            return  counter;
+        },
+        reset:()=>{
+            counter = init;
+            return  counter;
+        }
+    }
+};
+
+const counter = createCounter(5)
+ console.log(counter.increment()); // 6
+ console.log(counter.increment()); // 6
+ console.log(counter.reset()); // 5
+ console.log(counter.decrement()); // 4
+
+ var map = function(arr, fn) {
+    
+    const returnedArray = [];
+    for (let i = 0; i < arr.length; i++) {
+        returnedArray[i] = fn(arr[i], i);
+    }
+    return returnedArray;
+};
+
+function plusone(n) { 
+    return n + 1; 
+}
+
+function plusI(n, i) { 
+    return n + i; 
+}
+
+function constant() { 
+    return 42; 
+}
+
+console.log(map([1,2,3],constant));
+
+let a1 =10;
+let b1 = 9;
+
+[a1,b1] =[a1+b1,a1];
+
+console.log(a1);
+console.log(b1);
+
+var filter = function(arr, fn) {
+    const resultArr =[];
+    for(let i=0; i < arr.length;i++) {
+            let filteredVal = fn(arr[i],i);
+            if(filteredVal) {
+                resultArr.push(arr[i]);
+            }
+    }
+    return resultArr;
+};
+
+function greaterThan10(n) { return n > 10; }
+
+function firstIndex(n, i) { return i === 0; }
+
+function plusOne(n) { return n + 1 }
+
+console.log(filter([8,20,10,30],firstIndex));
+
+var reduce = function(nums, fn, init) {
+    // if(nums.length === 0) {
+    //     return init;
+    // }
+    let val = init;
+    for(let i = 0; i<nums.length;i++) {
+        val = fn(val,nums[i]);
+    }
+   return val;
+};
+
+function sum(accum, curr) {
+    return accum + curr; 
+}
+
+function sum1(accum, curr) { return accum + curr * curr; }
+
+function sum2(accum, curr) { return 0; }
+
+console.log(reduce([],sum2,25));
