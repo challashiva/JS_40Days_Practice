@@ -14,7 +14,7 @@
       <h1 class="text-3xl font-bold p-4">Country Explorer</h1>
       <div class="mt-4 flex flex-col sm:flex-row gap-2">
         <input type="text" id="countryInput" placeholder="Enter Country Name" class="border  rounded w-full sm:w-auto p-2">
-        <button id="searchBtn" class="px-4 py-2 bg-blue-600 text-white border rounded">Search</button>
+        <button id="searchBtn" class=" cursor-pointer px-4 py-2 bg-blue-600 text-white border rounded">Search</button>
       </div>
 
       <div id="loader" class="hidden mt-4 text-center">Loader.....</div>
@@ -22,7 +22,15 @@
       <div id="error" class="hidden mt-4 text-red-500"></div>
 
       <div id="countryDetails" class="mt-4 space-y-4"></div>
-
+      
+      <div class="mb-4 mt-4 flex justify-between flex-col gap-2 w-fit items-center sm:flex-row">
+        <button id="addFavoriteBtn" class="px-4 cursor-pointer py-2 border rounded text-white">Add
+          Favorites</button>
+        <button id="clearBtn" class="px-4 py-2 cursor-pointer border rounded text-white disabled">Clear</button>
+        <a id="showFavorite" href="#">Show Favorites</a>
+      </div>
+      <div id="favoriteItems" class="mb-4 border rounded flex flex-col items-center hidden text-white gap-2 sm:flex-row" ></div>
+      
       <div id="mapDetails" class="h-64 mt-4"></div>
     </div>
   </body>

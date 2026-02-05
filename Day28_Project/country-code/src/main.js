@@ -7,8 +7,35 @@ const countryDetails = document.getElementById("countryDetails");
 const loader = document.getElementById("loader");
 const errorElem = document.getElementById("error");
 
-
+const favbtn = document.getElementById("addFavoriteBtn");
+const favItems = document.getElementById("favoriteItems");
+const showFav = document.getElementById("showFavorite");
+let favArray = JSON.parse(localStorage.getItem("countryName")) || [];
 let map;
+
+ document.getElementById("clearBtn").addEventListener("click", () => {
+   localStorage.clear();
+   favbtn.textContent = `Add Favorite`;
+ });
+
+ showFav.addEventListener('click',()=>{
+    favItems.classList.remove("hidden");
+    let html ="";
+    favArray.forEach((elem) => {
+        html +=
+        `
+        <div id="favCountry" class="m-3 p-4 border rounded flex flex-col sm:flex-row text-white">
+            <p>${elem}</p>
+        </div>
+        `
+    })
+    favItems.innerHTML=html;
+ })
+
+document.getElementById("favCountry").addEventListener('click',(e)=>{
+    const value= e.target("p");
+    console.log(value.textContent);
+})
 
 searchBtn.addEventListener('click',async ()=>{
     const countryName = countryInput.value.trim();
@@ -46,8 +73,18 @@ async function fetchCountry(name) {
                     <h2 class="text-xl font-semibold mb-2">Local Times</h2>
                     <ul id="timezoneList" class="list-disc ml-6"></ul>
                 </div>
+                
             </div>
         `;
+        favbtn.addEventListener('click',() =>{
+            if(!favArray.includes(country.name.common)) {
+                favArray.push(country.name.common);
+                localStorage.setItem("countryName",JSON.stringify(favArray));
+            }
+            favbtn.textContent = favArray.length ? `Add Favorite ${favArray.length}` : `Add Favorite`;
+            
+        });
+       
         updateTimeZones(country.timezones);
         drawMap(country.latlng,country.name.common);
     } catch (error) {
