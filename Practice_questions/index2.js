@@ -78,7 +78,27 @@ const fn = multiPipe([x => x + 1, x => 2 * x, x => 3 * x]);
 console.log(fn(2));
 
 var argumentsLength = function(...args) {
+    let result ="";
+    for(let i =0; i<args.length;i++) {
+        console.log(args[i]);
+    }
     return args.length;
 };
 
 console.log(argumentsLength([{}, null, "3"]));
+
+
+var once = function(fn) {
+    
+    return function(...args){
+        let result=0;
+        for(let i=0;i<args.length;i++) {
+            result = fn[args[i]](result)
+        }
+        return result
+    }
+};
+
+let fn1 = (a,b,c) => (a + b + c);
+let onceFn = once(fn);
+console.log(onceFn);
